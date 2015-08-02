@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class PublisherTest < ActiveSupport::TestCase
-  test "truth" do
-    assert_kind_of Module, Publisher
+  context "shoulda test" do
+    should "work" do
+      assert_contains(['a', '1'], 'a')
+    end
   end
 end

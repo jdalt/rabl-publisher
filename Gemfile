@@ -9,6 +9,7 @@ gemspec
 gem "jquery-rails"
 gem "resque", "~> 1.25"
 gem "resque-retry"
+gem "shoulda"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

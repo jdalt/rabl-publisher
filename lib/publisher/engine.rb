@@ -1,5 +1,5 @@
 module Publisher
-  mattr_accessor :child_lookup_hash, :root_objects
+  mattr_accessor :child_publish, :root_publish, :root_objects
 
   class Engine < ::Rails::Engine
     isolate_namespace Publisher
@@ -10,7 +10,8 @@ module Publisher
     end
 
     config.after_initialize do |app|
-      Publisher.child_lookup_hash = PublishInitializer.get_lookup_chain
+      Publisher.child_publish = PublishInitializer.child_publish
+      Publisher.root_publish = PublishInitializer.root_publish
     end
 
   end

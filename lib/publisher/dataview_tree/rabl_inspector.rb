@@ -37,8 +37,6 @@ module Publisher
       mongoid_meta = klass.associations[method.to_s] if klass.respond_to?(:associations)
       am_meta = klass.am_relations[method.to_s] if klass.respond_to?(:am_relations)
 
-      binding.pry if ar_meta
-
       if ar_meta
         self.ar_obj(ar_meta, klass, method, dataview)
       elsif mongoid_meta

@@ -8,8 +8,8 @@ module Publisher
       # multiple children.
       resource = resource_class.constantize.find(resource_id)
       dataviews = Publisher.root_publish[resource_class]
-      # CONSIDER: exception of log warning if no dataviews found for class?
-      # Lean exception.
+      # CONSIDER: exception XOR log warning if no dataviews found for class?
+      # ...prefer exception....
       dataviews.each do |dataview|
         payload = Rabl.render(resource, dataview.source_template, :view_path => 'app/publish', :format => :json)
         res = Typhoeus.post("localhost:3000/publish", body: payload, headers: {'Content-Type' => 'application/json'})

@@ -14,7 +14,8 @@ module Publisher
         payload = Rabl.render(resource, dataview.source_template, :view_path => 'app/publish', :format => :json)
         res = Typhoeus.post("localhost:3000/publish", body: payload, headers: {'Content-Type' => 'application/json'})
         # use exponential stand off if failed?
-        puts res.request.response.body
+        resp = res.request.response
+        puts "*** Published #{resource_class} (id:#{resource_id}) #{resp.response_code} #{resp.body} #{resp.total_time} ***"
       end
       nil
     end

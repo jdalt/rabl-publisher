@@ -19,11 +19,5 @@ module Publisher
       end
       nil
     end
-
-    # TODO: handle super classes OR is binding to callbacks of base class
-    # sufficient?
-    def self.super_klasses_snake(klass)
-      super_klasses(klass).map { |klazz| klazz.to_s.underscore }
-    end
   end
 end

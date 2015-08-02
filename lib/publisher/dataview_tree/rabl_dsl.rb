@@ -30,7 +30,7 @@ module Publisher
       yield if block_given?
     end
 
-    def dataview_parent(klass, options={})
+    def dataview_parent(klass, collection, version, options={})
       root_dataview_node = DataviewRootNode.new(klass: klass.to_s, source_template: template_name)
       @original_dataview_node = @current_dataview_node = root_dataview_node
     end

@@ -61,7 +61,6 @@ module Publisher
 
     def self.mongoid_obj(meta, klass, method, dataview)
       dataview.klass = meta[:class_name] || method.to_s.singularize.camelize
-      binding.pry unless dataview.klass
       dataview.reverse_method = (meta[:as] || klass.to_s.underscore).to_sym
     end
 

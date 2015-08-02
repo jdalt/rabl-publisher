@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
+  s.add_dependency "rabl", "~> 0.7.10"
   s.add_dependency "rails", "~> 3.2.16"
   s.add_dependency "resque", "~> 1.25"
   s.add_dependency "resque-retry"

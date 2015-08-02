@@ -11,6 +11,22 @@ module Publisher
       end
     end
 
+    def find_parent(resource)
+      obj = resource
+      root_callchain.each do |method|
+        obj = obj.send(method)
+      end
+      obj
+    end
+
+    def root_class
+      current_view = self
+      while(!current_view.is_root?) do
+        current_view = current_view.parent
+      end
+      current_view.klass
+    end
+
     def is_root?
       false
     end

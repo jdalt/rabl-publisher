@@ -1,7 +1,7 @@
 require "publisher/util"
 require "publisher/engine"
 require "publisher/publish_initializer"
-require "publisher/macros" # TODO get rid of
+require "publisher/callbacks"
 require "publisher/rabl_engine_extension"
 
 require "publisher/jobs/push_resource"

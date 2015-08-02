@@ -1,7 +1,5 @@
 module Publisher
   class PushToParent
-    extend Publisher::Util
-
     @queue = :low
 
     def self.perform(resource_id, resource_class, requested_at)

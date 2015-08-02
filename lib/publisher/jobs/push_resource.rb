@@ -1,6 +1,5 @@
 module Publisher
   class PushResource
-    extend Publisher::Util
     @queue = :high
 
     def self.perform(resource_id, resource_class, requested_at)

@@ -35,7 +35,7 @@ module Publisher
       @original_dataview_node = @current_dataview_node = root_dataview_node
     end
 
-    def extends(partial_name)
+    def extends(partial_name, options={}, &block)
       return unless current_dataview_node # consider raising an exception
       current_dataview_node.extension_templates << partial_name
       RablDsl.process_file(partial_name, current_dataview_node)
